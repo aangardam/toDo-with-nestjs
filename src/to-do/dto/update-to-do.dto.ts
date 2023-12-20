@@ -10,12 +10,14 @@ export class UpdateToDoDto extends PartialType(CreateToDoDto) {
   title: string;
 
   @ApiProperty({
+    required: false,
     type: String,
     description: 'This is an optional property',
   })
   dueDate: string;
 
   @ApiProperty({
+    required: false,
     type: String,
     description: 'This is an optional property',
   })
