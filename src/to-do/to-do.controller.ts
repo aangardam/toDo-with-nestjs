@@ -11,6 +11,7 @@ import {
 import { ToDoService } from './to-do.service';
 import { CreateToDoDto } from './dto/create-to-do.dto';
 import { UpdateToDoDto } from './dto/update-to-do.dto';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { UpdateStatusToDoDto } from './dto/updateStatus-to-do.dts';
 import {
   ResponseResultSuccess,
