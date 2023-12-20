@@ -11,6 +11,7 @@ import {
 import { ToDoService } from './to-do.service';
 import { CreateToDoDto } from './dto/create-to-do.dto';
 import { UpdateToDoDto } from './dto/update-to-do.dto';
+import { UpdateStatusToDoDto } from './dto/updateStatus-to-do.dts';
 import {
   ResponseResultSuccess,
   ResponseResultError,
@@ -101,15 +102,15 @@ export class ToDoController {
   @Patch('update-status/:id')
   updateStatus(
     @Param('id') id: string,
-    @Body() updateToDoDto: UpdateToDoDto,
+    @Body() UpdateStatusToDoDto: UpdateStatusToDoDto,
     @Res() res: Response,
   ) {
-    const updateData = this.toDoService.updateStatus(+id, updateToDoDto);
+    const updateData = this.toDoService.updateStatus(+id, UpdateStatusToDoDto);
     if (updateData) {
       const customResult = new ResponseResultSuccess(
         200,
         'Data berhasil diubah',
-        updateToDoDto,
+        UpdateStatusToDoDto,
       );
       res.status(200).json(customResult);
     } else {

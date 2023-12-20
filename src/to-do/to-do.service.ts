@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateToDoDto } from './dto/create-to-do.dto';
 import { UpdateToDoDto } from './dto/update-to-do.dto';
+import { UpdateStatusToDoDto } from './dto/updateStatus-to-do.dts';
 
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -36,8 +37,8 @@ export class ToDoService {
     return await this.todoRepository.update(id, updateToDoDto);
   }
 
-  async updateStatus(id: number, updateToDoDto: UpdateToDoDto) {
-    return await this.todoRepository.update(id, updateToDoDto);
+  async updateStatus(id: number, UpdateStatusToDoDto: UpdateStatusToDoDto) {
+    return await this.todoRepository.update(id, UpdateStatusToDoDto);
   }
 
   remove(id: number) {
